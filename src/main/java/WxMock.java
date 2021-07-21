@@ -13,7 +13,7 @@ public class WxMock {
     public static void main(String[] args) throws URISyntaxException, InterruptedException {
         System.setProperty("java.util.logging.SimpleFormatter.format","%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS %4$-6s %2$s %5$s%6$s%n");
         String im = args[0];
-        String clientId = im.substring(im.lastIndexOf('/'));
+        String clientId = im.substring(im.lastIndexOf('/') + 1);
         logger.info("mock started, try to connect to IM:" + im);
         WebSocketClient cc = new WebSocketClient(new URI(im)) {
 
